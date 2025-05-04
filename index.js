@@ -20,21 +20,15 @@ function calcular() {
         let total=a+b+c;
         document.getElementById("valorNotaTotal").value=total;
 
-        switch(total){
-
-            case (total>=0 && total<59):
-                alerta("Reprobado")
-                break;
-
-
-
-            default:
-                alerta("Hola")
-                break;
-
+        if (total >= 0 && total < 59) {
+            alerta("Reprobado");
+        } else if (total >= 60 && total < 79) {
+            alerta2("Bueno");
+        } else if (total >= 80 && total < 89) {
+            alerta2("Muy Bueno");
+        } else {
+            alerta2("Sobresaliente");
         }
-
-
 
 
     }
@@ -52,9 +46,18 @@ function limpiar() {
 
 function alerta(mensaje) {
     Swal.fire({
-        title: "Error!",
+        title: "Estudia Mas!",
         text: mensaje,
-        icon: "warning",
+        icon: "error",
+    });
+
+}
+
+function alerta2(mensaje) {
+    Swal.fire({
+        title: "Excelente!",
+        text: mensaje,
+        icon: "success",
     });
 
 }
