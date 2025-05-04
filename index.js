@@ -1,39 +1,41 @@
 function calcular() {
 
-    let strA=document.getElementById("valorA").value;
-    let strB=document.getElementById("valorB").value;
-    let strC=document.getElementById("valorC").value;
+    let strA=document.getElementById("valorPrimerParcial").value;
+    let strB=document.getElementById("valorSegundoParcial").value;
+    let strC=document.getElementById("valorTercerParcial").value;
 
-    if (strA===""){
-        alerta("valor a en blanco")
+    if (strA==="" || strA>30){
+        alerta("No se admiten valores nulos o mayores a 30% en el primer parcial")
 
-
-
-    }else if (strB===""){
-        alerta("valor b en blanco")
+    }else if (strB==="" || strB>30){
+        alerta("No se admiten valores nulos o mayores a 30% en el segundo parcial")
     }
-    else if (strC===""){
-        alerta("valor c en blanco")
+    else if (strC==="" || strB>40){
+        alerta("No se admiten valores nulos o mayores a 40% en el tercer parcial")
     }else{
+
         let a =parseFloat(strA);
         let b =parseFloat(strB);
         let c =parseFloat(strC);
+        let total=a+b+c;
+        document.getElementById("valorNotaTotal").value=total;
+
+        switch(total){
+
+            case (total>=0 && total<59):
+                alerta("Reprobado")
+                break;
 
 
-        if (a!==0){
-            let discriminante=(b*b)-(4*a*c);
-            if (discriminante>=0){
-                let x1=((-b)+(Math.sqrt(discriminante)))/(2*a);
-                let x2=((-b)-(Math.sqrt(discriminante)))/(2*a);
-                document.getElementById("valorX1").value=x1;
-                document.getElementById("valorX2").value=x2;
-            }else{
-                alerta("discriminante menor que cero")
-            }
-        }else{
 
-            alerta("el valor de a debe ser diferente de 0")
+            default:
+                alerta("Hola")
+                break;
+
         }
+
+
+
 
     }
 
@@ -42,11 +44,10 @@ function calcular() {
 }
 
 function limpiar() {
-    document.getElementById("valorX1").value="";
-    document.getElementById("valorX2").value="";
-    document.getElementById("valorA").value="";
-    document.getElementById("valorB").value="";
-    document.getElementById("valorC").value="";
+    document.getElementById("valorNotaTotal").value="";
+    document.getElementById("valorPrimerParcial").value="";
+    document.getElementById("valorSegundoParcial").value="";
+    document.getElementById("valorTercerParcial").value="";
 }
 
 function alerta(mensaje) {

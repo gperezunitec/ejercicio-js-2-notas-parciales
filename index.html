@@ -7,30 +7,25 @@
 </head>
 <body>
 <div class="container">
-    <div class="row">
+    <div class="col">
         <div class="col mt-3">
-            <label class="form-label" for="valorA">Valor a:</label>
-            <input class="form-control" type="number" id="valorA">
+            <label class="form-label" for="valorPrimerParcial">Primer Parcial:</label>
+            <input class="form-control" type="number" id="valorPrimerParcial">
         </div>
         <div class="col mt-3">
-            <label class="form-label" for="valorB">Valor b:</label>
-            <input class="form-control" type="number" id="valorB">
+            <label class="form-label" for="valorSegundoParcial">Segundo Parcial:</label>
+            <input class="form-control" type="number" id="valorSegundoParcial">
         </div>
         <div class="col mt-3">
-            <label class="form-label" for="valorC">Valor c:</label>
-            <input class="form-control" type="number" id="valorC">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col mt-2">
-            <label class="form-label" for="valorX1">Valor x1:</label>
-            <input class="form-control" type="number" id="valorX1" readonly>
+            <label class="form-label" for="valorTercerParcial">Tercer Parcial:</label>
+            <input class="form-control" type="number" id="valorTercerParcial">
         </div>
         <div class="col mt-2">
-            <label class="form-label" for="valorX2">Valor x2:</label>
-            <input class="form-control" type="number" id="valorX2" readonly>
+            <label class="form-label" for="valorNotaTotal">Nota Total:</label>
+            <input class="form-control" type="number" id="valorNotaTotal" readonly>
         </div>
     </div>
+
     <div class="row">
         <div class="col mt-3">
             <button type="button" class="btn btn-success" onclick="calcular()">Calcular</button>
